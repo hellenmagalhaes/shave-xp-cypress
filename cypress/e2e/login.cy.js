@@ -6,7 +6,8 @@ describe('login', () => {
 
     context('quando submeto o formulário', () => {
 
-        it.only('deve logar com sucesso', () => {
+        it('deve logar com sucesso', () => {
+
             const user = data.success
             cy.createUser(user)
 
@@ -38,7 +39,7 @@ describe('login', () => {
         it('campos obrigatórios', () => {
 
             loginPage.submit()
-            loginPage.requiredFields('E-mail é obrigatório','Senha é obrigatória')
+            loginPage.requiredFields('E-mail é obrigatório', 'Senha é obrigatória')
 
         })
 
@@ -47,7 +48,9 @@ describe('login', () => {
     context('senha muito curta', () => {
 
         data.shortpass.forEach((p) => {
+
             it(`não deve logar com a senha: ${p}`, () => {
+                
                 loginPage.submit('hellenmagalhaes@yahoo.com.br', p)
                 loginPage.alertShouldBe('Pelo menos 6 caracteres')
 
