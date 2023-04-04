@@ -1,16 +1,16 @@
 {
     "success": {
         "name": "Hellen",
-        "email": "hellenmagalhaes@yahoo.com.br",
+        "email": "hellenavanco@yahoo.com.br",
         "password": "pwd123",
         "is_shaver": false
     },
     "invpass": {
-        "email": "hellenmagalhaes@yahoo.com.br",
+        "email": "hellenavanco@yahoo.com.br",
         "password": "abc123"
     },
     "email404": {
-        "email": "hellenmagalhaes@404.com.br",
+        "email": "hellenavanco@404.com.br",
         "password": "abc123"
     },
     "shortpass": [
@@ -21,11 +21,11 @@
         "12345"
     ],
     "invemail": [
-        "hellen_magalhaes&yahoo.com.br",
-        "hellen_magalhaes.com.br",
+        "hellenhellenavanco&yahoo.com.br",
+        "hellenhellenavanco.com.br",
         "@yahoo.com.br",
         "@",
-        "hellen_magalhaes@",
+        "hellenhellenavanco@",
         "123131313",
         "@#$%&*"
     ]

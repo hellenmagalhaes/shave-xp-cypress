@@ -34,6 +34,15 @@ Cypress.Commands.add('createUser', (user) => {
     })
 })
 
+Cypress.Commands.add('deleteUser', (email) => {
+    cy.request({
+        method: 'DELETE',
+        url: 'http://localhost:5000/user/' + email,
+    }).then(function (response) {
+        expect(response.status).to.eq(204)
+    })
+})
+
 Cypress.Commands.add('recoveryPass', (email) => {
     cy.request({
         method: 'POST',
