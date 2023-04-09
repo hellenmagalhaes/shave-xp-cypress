@@ -8,13 +8,13 @@ class ResetPassPage {
     submit(newPass, confirmPass) {
         cy.get('input[placeholder="Nova senha"]')
             .type(newPass)
-        cy.get('input[placeholder="Confirmação de senha"]')
+        cy.get('input[placeholder="Confirmação da senha"]')
             .type(confirmPass)
         cy.contains('button', 'Alterar senha')
             .click()
     }
 
-    noticeShouldBe(expectText) {
+    noticeSuccessShouldBe(expectText) {
         cy.get('.notice p', { timeout: 10000 })
             .should('be.visible')
             .should('have.text', expectText)

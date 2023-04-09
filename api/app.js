@@ -21,7 +21,7 @@ app.get('/welcome', function (req, res) {
   res.json({ message: 'Olá QAx' })
 })
 
-app.get('/token', async function (req, res) {
+app.get('/token/:email', async function (req, res) {
   const { email } = req.params
   const token = await findToken(email)
 

@@ -14,7 +14,7 @@ class ForgotPassPage {
             .click()
     }
 
-    noticeShouldBe(expectText) {
+    noticeSuccessShouldBe(expectText) {
         cy.get('.notice p', { timeout: 10000 })
             .should('be.visible')
             .should('have.text', expectText)

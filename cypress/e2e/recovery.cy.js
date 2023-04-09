@@ -17,10 +17,10 @@ describe('esqueci minha senha', () => {
         forgotPassPage.go()
         forgotPassPage.submit(user.email)
         const message = 'Enviamos um e-mail para confirmar a recuperação de senha, verifique sua caixa de entrada.'
-        forgotPassPage.noticeShouldBe(message)
+        forgotPassPage.noticeSuccessShouldBe(message)
     })
 
-    context('quando o usuário solicita resgate de senha', () => {
+    context.only('quando o usuário solicita o resgate de senha', () => {
 
         const user = {
             name: "João Esquecido",
@@ -33,13 +33,14 @@ describe('esqueci minha senha', () => {
             cy.createUser(user)
             cy.recoveryPass(user.email)
             cy.getToken(user.email)
+            console.log();
         })
 
         it('deve poder cadastrar uma nova senha', () => {
             resetPassPage.go(Cypress.env('passToken'))
             resetPassPage.submit('abc123', 'abc123')
-            const message = 'Agora você já pode logar com a sua nova senha secreta'
-            resetPassPage.noticeShouldBe(message)
+            const message = 'Agora você já pode logar com a sua nova senha secreta.'
+            resetPassPage.noticeSuccessShouldBe(message)
         })
 
         afterEach(() => {
